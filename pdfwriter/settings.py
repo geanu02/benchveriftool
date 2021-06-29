@@ -53,6 +53,8 @@ ROOT_URLCONF = 'pdfwriter.urls'
 
 template_dir = os.path.join(BASE_DIR, "templates")
 
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, "templates"), )
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -65,6 +67,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            #'libraries': {
+            #    'staticfiles': 'django.templatetags.static',
+            #}
         },
     },
 ]
@@ -120,6 +125,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'staticfiles'), )
+
+#STATICFILES_FINDERS = (
+#    'django.contrib.staticfiles.finders.FileSystemFinder',
+#    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+##)
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -1,4 +1,4 @@
-#!/Users/geanu/Local/Projects/PDF Writer/env/bin/python
+#!/Users/geanu/Local/Projects/bmpdfwriter/env/bin/python
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

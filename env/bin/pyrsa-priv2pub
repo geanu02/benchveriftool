@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/Users/geanu/Local/Projects/PDF Writer/env/bin/python" "$0" "$@"
-' '''
+#!/Users/geanu/Local/Projects/bmpdfwriter/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

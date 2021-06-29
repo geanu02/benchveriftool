@@ -2,13 +2,19 @@
 
 {% if user.is_authenticated %}
 {% block content %}
-<p>Logged in as <i>{{ user_name }}</i>, <a href="/logout">Logout</a></p>
-<h1>BlueMark Verification Report Generator</h1>
+<div class="top-box">
+    <div class="top-box-title">
+        <h1>BlueMark Verification Report Generator</h1>
+    </div>
+    <div class="top-box-logstat">
+        <p>Logged in as <i>{{ user_name }}</i>, <a href="/logout">Logout</a></p>
+    </div>
+</div>
 <p>Choose a client and/or peer group:</p>
 <form action='.' method='POST'>
     {% csrf_token %}
     <p>
-        <select name='client_id'>
+        <select name='client_id' id="select">
             {% for c_key, c_value in c_list.items %}
             {% if p_key == 0 %}
             <option value="{{ c_key }}" selected>{{ c_value }}</option>
@@ -19,7 +25,7 @@
         </select>
     </p>
     <p>
-        <select name='peerGrp_id'>
+        <select name='peerGrp_id' id="select">
             {% for p_key, p_value in p_list.items %}
             {% if p_key == 0 %}
             <option value="{{ p_key }}" selected>{{ p_value }}</option>
@@ -35,7 +41,8 @@
 </form>
 {% if request.method == "POST" %}
 {% load static %}
-<embed src="{% static '001_sample.pdf' %}" width="900" height="1100" type="application/pdf"></embed>
+<embed src="{% static 'writePDF/data/output_doc.pdf' %}" name="plugin" width="900" height="1100"
+    type="application/pdf"></embed>
 {% endif %}
 {% endblock %}
 {% else %}
