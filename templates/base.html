@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Benchmark Verification Tool</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: whitesmoke;
+
+        }
+
+        #bodyody {
+            width: 100%;
+            margin: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #header {
+            padding: 10px 10px;
+            width: 100%;
+            background-color: #11244A;
+        }
+
+        .top-box {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+        }
+
+        .top-box-title {
+            align-self: left;
+        }
+
+        .top-box-logstat {
+            border: 1px;
+            width: 250px;
+            padding: 5px;
+        }
+
+        #select {
+            width: 320px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="header">
+        {% load static %}
+        <img src="{% static 'writePDF/images/gian_logo.png' %}" width=200 />
+    </div>
+    <div id="bodyody">
+        {% block content %}
+        {% endblock%}
+    </div>
+</body>
+
+</html>
