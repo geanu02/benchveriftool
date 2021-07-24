@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("django_secret_key")
 
+# SECURITY WARNING: Google API Key
 SECRET_DICTA = {
     "type": os.getenv("type"),
     "project_id": os.getenv("project_id"),
@@ -36,9 +37,9 @@ SECRET_DICTA = {
 }
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['geanu.pythonanywhere.com']
 
 # Application definition
 
